@@ -123,15 +123,15 @@
         <form>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" autocomplete="name">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" autocomplete="email">
             </div>
             <div class="form-group">
                 <label for="service">Select Service</label>
-                <select class="form-control" id="service">
+                <select class="form-control" id="service" name="service" autocomplete="off">
                     <option>Service 1</option>
                     <option>Service 2</option>
                     <option>Service 3</option>
@@ -139,7 +139,7 @@
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
+                <textarea class="form-control" id="message" name="message" rows="3" autocomplete="off"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
