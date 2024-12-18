@@ -104,7 +104,7 @@
         <div class="row">
             <div class="col-md-4 service-card">
                 <div class="card" style="border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGxpbnV4JTIwY29tcHV0ZXJ8ZW58MHx8fHwxNjc0NzA3MTU3&ixlib=rb-1.2.1&q=80&w=300" class="card-img-top" alt="Linux Service" style="border-radius: 20px 20px 0 0;">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGxpbnV4JTIwY29tcHV0ZXJ8ZW58MHx8fHwxNjc0NzA3MTU3&ixlib=rb-1.2.1&q=80&w=300" class="card-img-top" alt="Linux Service" style="border-radius: 20px 20px 0 0; transition: transform 0.3s;">
                     <div class="card-body" style="padding: 24px;">
                         <h5 class="card-title" style="font-size: 24px; font-weight: bold;">Linux Services</h5>
                         <p class="card-text" style="font-size: 18px;">Expert support and solutions for Linux environments.</p>
@@ -114,7 +114,7 @@
             </div>
             <div class="col-md-4 service-card">
                 <div class="card" style="border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
-                    <img src="https://images.unsplash.com/photo-1581091870627-d5b1e1d6c9b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHJlZCUyMGhhdCUyMHRlbXBlcmF0dXJlJTIwbmV0d29ya3xlbnwwfHx8fDE2NzQ3MDcxNTc&ixlib=rb-1.2.1&q=80&w=300" class="card-img-top" alt="Red Hat Service" style="border-radius: 20px 20px 0 0;">
+                    <img src="https://images.unsplash.com/photo-1581091870627-d5b1e1d6c9b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHJlZCUyMGhhdCUyMHRlbXBlcmF0dXJlJTIwbmV0d29ya3xlbnwwfHx8fDE2NzQ3MDcxNTc&ixlib=rb-1.2.1&q=80&w=300" class="card-img-top" alt="Red Hat Service" style="border-radius: 20px 20px 0 0; transition: transform 0.3s;">
                     <div class="card-body" style="padding: 24px;">
                         <h5 class="card-title" style="font-size: 24px; font-weight: bold;">Red Hat Solutions</h5>
                         <p class="card-text" style="font-size: 18px;">Comprehensive solutions tailored for Red Hat environments.</p>
@@ -124,7 +124,7 @@
             </div>
             <div class="col-md-4 service-card">
                 <div class="card" style="border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
-                    <img src="https://images.unsplash.com/photo-1581091870627-d5b1e1d6c9b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHNhZmV0eXxlbnwwfHx8fDE2NzQ3MDcxNTc&ixlib=rb-1.2.1&q=80&w=300" class="card-img-top" alt="Hacker Service" style="border-radius: 20px 20px 0 0;">
+                    <img src="https://images.unsplash.com/photo-1581091870627-d5b1e1d6c9b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHNhZmV0eXxlbnwwfHx8fDE2NzQ3MDcxNTc&ixlib=rb-1.2.1&q=80&w=300" class="card-img-top" alt="Hacker Service" style="border-radius: 20px 20px 0 0; transition: transform 0.3s;">
                     <div class="card-body" style="padding: 24px;">
                         <h5 class="card-title" style="font-size: 24px; font-weight: bold;">Security Services</h5>
                         <p class="card-text" style="font-size: 18px;">Protect your systems with our expert security services.</p>
@@ -134,6 +134,17 @@
             </div>
         </div>
     </section>
+    <script>
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+    </script>
 
     <section id="contact" class="container mt-5">
         <h2 class="text-center">Contact Us</h2>
