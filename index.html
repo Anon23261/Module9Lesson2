@@ -108,7 +108,7 @@
             </div>
             <div class="col-md-4 service-card">
                 <div class="card" style="border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/8/88/Red_Hat_Logo.svg" class="card-img-top" alt="Red Hat Service" style="border-radius: 20px 20px 0 0; transition: transform 0.3s;">
+                    <img src="https://brands.home.redhat.com/red-hat-logo.svg" class="card-img-top" alt="Red Hat Service" style="border-radius: 20px 20px 0 0; transition: transform 0.3s;">
                     <div class="card-body" style="padding: 24px;">
                         <h5 class="card-title" style="font-size: 24px; font-weight: bold; color: black;">Red Hat Solutions</h5>
                         <p class="card-text" style="font-size: 18px; color: black;">Comprehensive solutions tailored for Red Hat environments, including training and support for enterprise applications.</p>
@@ -197,25 +197,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            if (name === '' || email === '' || message === '') {
-                alert('Please fill in all fields.');
-                return;
-            }
-            alert('Thank you for your message!');
-            this.reset();
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('img').style.transform = 'scale(1)';
+            });
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
     </script>
