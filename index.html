@@ -35,7 +35,7 @@
         }
         .service-card {
             margin: 20px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             background-color: #2c2c2c;
             border: 1px solid #444;
             border-radius: 10px;
@@ -43,6 +43,7 @@
         .service-card:hover {
             transform: scale(1.05);
             border-color: #ff0000;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5);
         }
         .footer {
             background-color: #333;
@@ -52,10 +53,20 @@
         .btn-primary {
             background-color: #ff0000;
             border-color: #ff0000;
+            transition: background-color 0.3s;
         }
         .btn-primary:hover {
             background-color: #cc0000;
             border-color: #cc0000;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                height: 50vh;
+            }
+            .service-card {
+                margin: 10px;
+            }
         }
     </style>
 </head>
@@ -184,6 +195,7 @@
             alert('Thank you for your message!');
             this.reset();
         });
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
